@@ -5,5 +5,28 @@
   <div class="panel-heading">
       {{pageTitle + ': ' + product.productName}}
   </div>
+  <div class="table-responsive">
+      <table class="table" >
+        <tbody>
+            <tr>
+                <td>
+                    <img 
+                    [src]='product.imageUrl' 
+                    [title] = 'product.productName'>
+                </td>
+                <td>{{product.productName}}</td>
+                <td>{{product.productCode | lowercase | convertToSpaces: '-' }}</td>
+                <td>{{product.releaseDate}}</td>
+                <td>{{product.price | currency: 'USD': '1.2-2'}}</td>
+                <td>{{product.starRating}}</td>
+            </tr>
+        </tbody>
+      </table>
+  </div>
+  <div class="panel-footer">
+    <a  class="btn btn-default" (click)='onBack()' style="width:80px" >
+      <i class="glyphicon glyphicon-chevron-left"></i>Back
+    </a>
+  </div>
 </div>
 
